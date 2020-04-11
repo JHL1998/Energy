@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
+    <link rel="stylesheet" href="./css/energy.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+
+</head>
+<body>
+
+<!-- 导航-->
+<nav class="ui inverted segment">
+    <div class="ui container">
+        <div class="ui inverted menu">
+            <h2 class="ui teal header item " style="margin: auto"> 能源管理系统注册页面</h2>
+
+        </div>
+    </div>
+
+</nav>
+
+<!-- 注册-->
+<div class="m-padded-tb-large">
+    <div class="ui container">
+
+        <!-- 左边-->
+        <div class="ui grid">
+            <div class="eleven wide column">
+                <form action="/register" method="post">
+                    <div class="ui segment" style="height: 500px">
+                        <div class="ui input " style="width:300px;height: 50px " >
+                            <input   type="text"  id="username" placeholder="请输入用户名">
+                        </div><br>
+                        <div class="ui input" style="width:300px;height: 50px " >
+                            <input type="text" id="password" placeholder="请输入密码">
+                        </div><br>
+                        <div class="ui input" style="width:300px;height: 50px " >
+                            <input type="text" id="name" placeholder="请输入真实姓名">
+                        </div><br>
+                        <div class="ui input" style="width:300px;height: 50px " >
+                            <input type="text" id="tel" placeholder="请输入电话号码">
+                        </div><br>
+                        <div class="ui input" style="width:300px;height: 50px " >
+                            <input type="text" id="email" placeholder="请输入邮箱">
+                        </div>
+                        <hr>
+                        <button  type="submit"  class="ui green basic button" style="width: 200px;height: 40px" >点击注册</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+        <!--右边-->
+        <div class="five wide colunm">
+
+        </div>
+    </div>
+
+
+
+
+
+</div>
+
+
+
+
+</body>
+</html>
