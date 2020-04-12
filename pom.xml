@@ -107,7 +107,7 @@
                 <version>5.2.4</version>
                 <configuration>
                     <driver>com.mysql.cj.jdbc.Driver</driver>
-                    <url>jdbc:mysql://http://47.92.115.93:3306/energy?useUnicode=true&amp;characterEncoding=UTF-8&amp;useSSL=false</url>
+                    <url>jdbc:mysql://47.92.115.93:3306/energy?useUnicode=true&amp;characterEncoding=UTF-8&amp;useSSL=false</url>
                     <user>root</user>
                     <password>ADmin123?</password>
                     <!--<schemas></schemas>-->

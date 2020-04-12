@@ -4,10 +4,12 @@ import com.big407.energy.mapper.UserMapper;
 import com.big407.energy.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
+import java.util.UUID;
 
 @Controller
 public class LoginController {
@@ -16,31 +18,25 @@ public class LoginController {
     private UserMapper userMapper;
 
 
-      @GetMapping("/login")
-      public String login(@RequestParam(value="username",required = false) String username,
-                          @RequestParam( value="password",required = false) String password,
-                          HttpServletRequest request){
 
-          User user = userMapper.findByPassword(username, password);
-          if(user!=null){
-              //登录成功
-              if(user.getStatus()==0){
-                  //普通用户
-                  request.getSession().setAttribute("user",user);
-                  return "profile";
-              }else{
-                  //管理员用户
-                  request.getSession().setAttribute("admin",user);
-                  return "adminProfile";
-              }
+    @PostMapping("/login")
+    public String login(@RequestParam(name="username",required = false) String username,
+                        @RequestParam(name="password",required = false)String password,
+                        HttpServletResponse response){
+           User user=userMapper.findByPassword(username,password);
+           if(user!=null){
+               //登录成功
+               String token= UUID.randomUUID().toString();
+               //将自定义的token写入cookie
+               userMapper.addToken(user.getId(),token);
+               response.addCookie(new Cookie("token",token));
 
-          }else{
-              //登录失败，跳转回登录界面
-
-              return "redirect:/index";
-          }
+               return "redirect:/profile";
+           }else{
+               //退回到登录页面
+               return "redirect:/";
+           }
 
 
-
-      }
+    }
 }

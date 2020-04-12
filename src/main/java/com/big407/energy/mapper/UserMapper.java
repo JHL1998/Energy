@@ -4,6 +4,7 @@ import com.big407.energy.model.User;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 @Mapper
 public interface UserMapper {
@@ -17,5 +18,8 @@ public interface UserMapper {
 
     @Select("select * from user where username=#{username} and password= #{password}")
     User findByPassword(String username,String password);
+
+    @Update("update user set token=#{token} where id=#{id}")
+    void addToken( Long id,String token);
 
 }
