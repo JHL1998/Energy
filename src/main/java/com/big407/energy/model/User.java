@@ -20,5 +20,7 @@ public class User {
     private String email;
     private Long gmtCreate;
     private Long gmtModified;
+    //0代表普通用户，1代表管理员
+    private Integer status;
 
 }

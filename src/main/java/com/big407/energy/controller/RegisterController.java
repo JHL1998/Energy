@@ -34,12 +34,14 @@ public class RegisterController {
                                 HttpServletRequest request,
                                 Model model){
 
+          User user = new User();
+          user.setUsername(username);
+          user.setPassword(password);
+          user.setName(name);
+          user.setEmail(email);
+          user.setTel(tel);
 
-              model.addAttribute("username",username);
-              model.addAttribute("password",password);
-              model.addAttribute("name",name);
-              model.addAttribute("tel",tel);
-              model.addAttribute("email",email);
+          userService.create(user);
              return "register";
 
       }

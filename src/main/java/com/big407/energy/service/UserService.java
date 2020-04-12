@@ -8,22 +8,18 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserService {
 
-      @Autowired
-      private UserMapper userMapper;
+    @Autowired
+    private UserMapper userMapper;
 
-       public void create(User user){
+    public void create(User user) {
 
-           if(userMapper.getById(user.getId())==null){
-               user.setGmtCreate(System.currentTimeMillis());
-               user.setGmtModified(user.getGmtCreate());
+        if (userMapper.getById(user.getId()) == null) {
+            user.setGmtCreate(System.currentTimeMillis());
+            user.setGmtModified(user.getGmtCreate());
 
-               userMapper.addUser(user);
-           }
-           //表示该用户已存在
+            userMapper.addUser(user);
+        }
 
-
-       }
-
-
+    }
 
 }
