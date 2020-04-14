@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>首页</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
-    <link rel="stylesheet" href="./static/css/me.css">
+    <link rel="stylesheet" href="/css/me.css">
 
 </head>
 <body>
@@ -30,8 +30,9 @@
                     <div class="ui inverted">
                         <a href="#" class="item"> <i class="alarm icon  transparent"></i></a>
                     </div>
-                    <div class="text">
-                       <i class="user icon"></i> JianhuaLuo
+                    <div class="text" th:if="${session.user!=null}">
+                       <i class="user icon"></i>
+                        <span th:text="${session.user.getName()}"></span>
                     </div>
                     <i class="dropdown icon"></i>
                     <div class="menu">
