@@ -1,5 +1,6 @@
 package com.big407.energy.interceptor;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -7,13 +8,14 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
 
+
+    @Autowired
+   private LoginInterceptor loginInterceptor;
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new LoginInterceptor())
-                .addPathPatterns("/admin/**")
-                .excludePathPatterns("/admin")
-                .excludePathPatterns("/admin/login");
-        
+
+        //拦截所有请求
+       registry.addInterceptor(loginInterceptor).addPathPatterns("/**");
 
     }
 }

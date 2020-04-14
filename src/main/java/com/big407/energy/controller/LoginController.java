@@ -24,6 +24,8 @@ public class LoginController {
     @GetMapping("/")
     public String loginPage(){
 
+
+
         return "index";
     }
 
@@ -45,9 +47,9 @@ public class LoginController {
            User user=userService.login(username,password);
            if(user!=null){
                //登录成功
-               session.setAttribute("user",user);
                String token= UUID.randomUUID().toString();
                //将自定义的token写入cookie
+
                userService.addToken(user.getId(),token);
                response.addCookie(new Cookie("token",token));
 
@@ -69,9 +71,14 @@ public class LoginController {
      * @return
      */
     @GetMapping("/logout")
-    public String logout(HttpSession session){
+    public String logout(HttpSession session,HttpServletResponse response){
 
+        //移除session
     session.removeAttribute("user");
+     //删除cookie
+        Cookie cookie = new Cookie("token",null);
+        cookie.setMaxAge(0);
+        response.addCookie(cookie);
            return "redirect:/";
 
     }

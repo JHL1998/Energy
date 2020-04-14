@@ -22,4 +22,7 @@ public interface UserMapper {
     @Update("update user set token=#{token} where id=#{id}")
     void addToken( Long id,String token);
 
+    @Select("select * from user where token=#{token}")
+    User findByToken(String token);
+
 }

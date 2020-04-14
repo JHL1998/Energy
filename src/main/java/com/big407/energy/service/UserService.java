@@ -46,6 +46,11 @@ public class UserService {
     }
 
 
+    public User findByToken(String token){
+       return  userMapper.findByToken(token);
+    }
+
+
 
 
 }

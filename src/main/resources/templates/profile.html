@@ -22,23 +22,24 @@
             <a href="#" class="item"><i class="bar chart icon"></i>数据分析</a>
 
 
-            <div class="right menu">
+            <div class="right item menu">
+                <div class="ui inverted">
+                    <a href="#" class="item"> <i class="comment icon   transparent"></i></a>
+                </div>
+                <div class="ui inverted">
+                    <a href="#" class="item"> <i class="alarm icon  transparent"></i></a>
+                </div>
                 <div class="ui dropdown item">
-                    <div class="ui inverted">
-                        <a href="#" class="item"> <i class="comment icon   transparent"></i></a>
-                    </div>
-                    <div class="ui inverted">
-                        <a href="#" class="item"> <i class="alarm icon  transparent"></i></a>
-                    </div>
                     <div class="text" th:if="${session.user!=null}">
-                       <i class="user icon"></i>
-                        <span th:text="${session.user.getName()}"></span>
+                        <img class="ui avatar image" src="https://unsplash.it/100/100?image-1005" th:text="${session.user.getName()}">
                     </div>
                     <i class="dropdown icon"></i>
                     <div class="menu">
-                        <a th:href="@{/logout}" class="item">注销</a>
+                     <a th:href="@{/logout}" class="item">注销</a>
                     </div>
+
                 </div>
+
             </div>
 
         </div>
@@ -74,7 +75,7 @@
             <!--进行布局  总共分成16份-->
             <div class="ui  inverted divided grid">
                 <div class="three wide column">
-                    <img src="./static/images/head.png" class="ui rounded image" style="width: 150px">
+                    <img src="/images/head.png" class="ui rounded image" style="width: 150px">
                 </div>
                 <div class="three wide column">
                     <h4 class=" ui inverted header">最新能源管理系统</h4>

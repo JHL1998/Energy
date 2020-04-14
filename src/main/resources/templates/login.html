@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <!--移动端浏览 -->
@@ -36,9 +36,9 @@
                 <div>
                     <div class="ui inverted horizontal link list">
                         <div class="item">
-                            <i class="user icon"></i>
-                            <a href="#" class="content">
-                                <div class="header"><i class="dropdown icon">我</i></div>
+                            <i class="user dropdown icon"></i>
+                            <a href="#" class="content" th:if="${session.user!=null}" >
+                                <span th:text="${session.user.getName()}"></span>
                             </a>
                         </div>
 
@@ -57,9 +57,14 @@
 <div class="m-container-small m-padded-tb-big">
     <div class="ui container">
 
-        <div class="ui  success large message">
+        <div class="ui  success large message" th:if="${session.user!=null}">
+
             <h2>Hi</h2>
-            <p>... 欢迎登录!</p>
+            <span th:text="${session.user.getName()}"> </span>
+            <p> 欢迎登录!</p>
+
+
+            <a th:href="@{/profile}">点击此处，跳转到首页</a>
         </div>
     </div>
 </div>
@@ -74,7 +79,7 @@
             <div class="three wide column">
                 <div class="ui inverted link list">
                     <div class="item">
-                        <img src="../static/images/head.png" class="ui rounded image" alt="" style="width: 110px">
+                        <img src="/images/head.png" class="ui rounded image" alt="" style="width: 110px">
                     </div>
                 </div>
             </div>
