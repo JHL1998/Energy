@@ -22,4 +22,30 @@ public class UserService {
 
     }
 
+    /**
+     * 验证登录
+     * @param username
+     * @param password
+     * @return
+     */
+    public User login(String username,String password){
+
+         User user=userMapper.login(username,password);
+         return user;
+
+    }
+
+    /**
+     * 添加token
+     * @param id
+     * @param token
+     */
+    public void addToken(Long id,String token){
+        userMapper.addToken(id,token);
+
+    }
+
+
+
+
 }

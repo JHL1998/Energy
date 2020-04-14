@@ -17,7 +17,7 @@ public interface UserMapper {
     User getById(Long id);
 
     @Select("select * from user where username=#{username} and password= #{password}")
-    User findByPassword(String username,String password);
+    User login(String username,String password);
 
     @Update("update user set token=#{token} where id=#{id}")
     void addToken( Long id,String token);

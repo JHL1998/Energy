@@ -1,0 +1,33 @@
+
+#数据源
+spring:
+  thymeleaf:
+    mode: HTML
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://47.92.115.93:3306/energy?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: root
+    password: ADmin123?
+  jpa:
+    show-sql: true
+
+
+
+#日志
+logging:
+  level:
+    root: warn
+    com.big407: info
+  file:
+    name: log/energy-pro.log
+
+
+mybatis:
+  type-aliases-package: com.big407.energy.model
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    #驼峰
+    map-underscore-to-camel-case: true
+
+server:
+  port: 8181
