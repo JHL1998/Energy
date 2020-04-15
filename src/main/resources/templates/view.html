@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>平台全景</title>
+</head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
+<link rel="stylesheet" type="text/css" href="/css/me.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+<script src="/js/echarts.min.js"></script>
+<body>
+
+<nav class=" ui inverted  attached segment">
+    <div class="ui container">
+        <div class="ui  inverted secondary menu m-padded-tb-mini">
+            <h2 class=" ui  teal header item">智慧能源云平台</h2>
+            <a href="#" class="item"> <i class="world icon"></i>平台全景</a>
+            <a href="#" class="item"><i class="map icon"></i>区域概览</a>
+            <a href="#" class="item"><i class="home icon"></i>运维中心</a>
+            <a href="#" class="item"><i class="waring icon"></i>光伏监控</a>
+            <a href="#" class="item"><i class="bar chart icon"></i>数据分析</a>
+
+
+            <div class="right item">
+                <div class="ui inverted">
+                    <a href="#" class="item"> <i class="comment icon   transparent"></i></a>
+                </div>
+                <div class="ui inverted">
+                    <a href="#" class="item"> <i class="alarm icon  transparent"></i></a>
+                </div>
+                <div>
+                    <div class="ui inverted horizontal link list">
+                        <div class="item">
+                            <i class="user dropdown icon"></i>
+                            <a href="#" class="content">
+                                张三
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+</nav>
+
+<!--中间部分 -->
+
+
+<div class="ui grid">
+    <div class=" three wide column">
+        <div class="ui segments">
+            <div class="ui inverted teal secondary segment">
+                <div class="ui three column grid">
+
+                    <div class=" left aligned column">
+                        <i class="  idea icon"></i>天气预报
+                    </div>
+                    <div class="center aligned column">
+                        04-01
+                    </div>
+                    <div class="right aligned column">
+                        <i class="  certificate icon"></i>晴
+                    </div>
+                </div>
+
+            </div>
+            <div class="ui inverted teal segment">
+                <div class="ui three column grid">
+
+                    <div class=" left aligned column">
+                        <i class="  idea icon"></i>天气预报
+                    </div>
+                    <div class="center aligned column">
+                        04-02
+                    </div>
+                    <div class="right aligned column">
+                        <i class="  certificate icon"></i>晴
+                    </div>
+                </div>
+            </div>
+            <div class="ui inverted teal segment">
+                <div class="ui three column grid">
+
+                    <div class=" left aligned column">
+                        <i class="  idea icon"></i>天气预报
+                    </div>
+                    <div class="center aligned column">
+                        04-03
+                    </div>
+                    <div class="right aligned column">
+                        <i class="  certificate icon"></i>晴
+                    </div>
+                </div>
+            </div>
+            <div class="ui divider"></div>
+
+            <div class="ui inverted teal segment">
+                <div class="ui column grid">
+
+                    <div class=" left aligned column">
+                        <i class="  idea icon"></i>站点概况
+                    </div>
+
+                </div>
+            </div>
+            <div class="ui inverted teal segment">
+                <div class="ui two column grid">
+                    <div class="column">
+                        <div class="ui content">总用户：</div>
+                    </div>
+                    <div class="right aligned column">
+                        <div class="ui content" style="color: coral">46<span style="color: black">户</span></div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="ui  divider"></div>
+
+            <div class="ui inverted teal segment ">
+                <div class="ui two column grid">
+                    <div class="column">
+                        <div class="ui content">今日最大负荷</div>
+                    </div>
+                    <div class="right aligned column">
+                        <div class="ui content" style="color: coral">65000<span style="color: black"> kw</span></div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="ui inverted teal segment">
+                <div id="pie_echarts" style="width: 100%;height: 170%"></div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="ten wide column">
+        <div class="ui segment">
+            <img src="/images/view.png" alt="" class="ui  image">
+        </div>
+
+    </div>
+
+
+    <div class="three wide column">
+        <div class="ui vertical divided segments">
+            <div class="ui inverted teal secondary segment">
+                <i class="ui home icon"></i>规模概况
+            </div>
+            <div class="ui inverted teal segment">
+                <div class="ui  aligned content" style="text-align: center">本年度总用电量</div>
+                <br>
+                <div class="ui  aligned content" style="text-align: center;color: coral">99,312</div>
+                <br>
+                <div class="ui  center aligned content" style="text-align: center">kWh</div>
+            </div>
+            <div class="ui inverted teal segment">
+                <div class="ui two column grid">
+                    <div class="column">
+                        <div class="ui content ">本年新能源总发电量</div>
+                    </div>
+                    <div class="right aligned column">
+                        <div class="ui content" style="color: coral">0<span style="color: black">kWh</span></div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="ui inverted teal segment">
+                <div class="ui two column divided grid">
+                    <div class="column">
+                        <div class="ui content ">总变压器数:</div>
+                        <div class="ui content" style="color: coral">300<span style="color: black"> 台</span></div>
+                        <br>
+
+                    </div>
+                    <div class="right aligned column">
+                        <div class="ui content ">总监测点数:</div>
+                        <div class="ui content" style="color: coral">100<span style="color: black">个</span></div>
+                    </div>
+
+                </div>
+            </div>
+               <div class="ui inverted  divided"></div>
+            <div class="ui inverted  teal secondary segment">
+                <i class="ui idea icon"></i>平台容量
+
+            </div>
+            <div class="ui inverted teal  segment">
+                <div class="ui content" style="text-align: center">平台总装机容量(KVA)</div>
+                <br>
+                <div class="ui content" style="text-align: right;color: coral" >228,625</div>
+            </div>
+            <div class="ui inverted teal  segment">
+                <div class="ui content" style="text-align: center">变压器装机容量(KVA)</div>
+                <br>
+                <div class="ui content" style="text-align: right;color: coral" >212,655</div>
+            </div>
+
+
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<!-- 饼状图-->
+<script>
+    var myChart = echarts.init(document.getElementById('pie_echarts'));
+    option = {
+        title: {
+            text: '电能统计情况',
+            left: 'center'
+        },
+        tooltip: {
+            trigger: 'item',
+            formatter: '{a} <br/>{b} : {c} ({d}%)'
+        },
+        legend: {
+            // orient: 'vertical',
+            // top: 'middle',
+            bottom: 10,
+            left: 'center',
+            data: ['1栋', '2栋', '3栋', '4栋', '5栋']
+        },
+        series: [
+            {
+                type: 'pie',
+                radius: '50%',
+                center: ['50%', '50%'],
+                selectedMode: 'single',
+                data: [
+                    {
+                        value: 1548,
+                        name: '1栋',
+                        label: {
+
+                            rich: {
+                                title: {
+                                    color: '#eee',
+                                    align: 'center'
+                                },
+                                abg: {
+                                    backgroundColor: '#333',
+                                    width: '100%',
+                                    align: 'right',
+                                    height: 25,
+                                    borderRadius: [4, 4, 0, 0]
+                                },
+                                Sunny: {
+                                    height: 30,
+                                    align: 'left',
+                                    backgroundColor: {}
+                                },
+                                Cloudy: {
+                                    height: 30,
+                                    align: 'left',
+                                    backgroundColor: {}
+                                },
+                                Showers: {
+                                    height: 30,
+                                    align: 'left',
+                                    backgroundColor: {}
+                                },
+                                weatherHead: {
+                                    color: '#333',
+                                    height: 24,
+                                    align: 'left'
+                                },
+                                hr: {
+                                    borderColor: '#777',
+                                    width: '100%',
+                                    borderWidth: 0.5,
+                                    height: 0
+                                },
+                                value: {
+                                    width: 20,
+                                    padding: [0, 20, 0, 30],
+                                    align: 'left'
+                                },
+                                valueHead: {
+                                    color: '#333',
+                                    width: 20,
+                                    padding: [0, 20, 0, 30],
+                                    align: 'center'
+                                },
+                                rate: {
+                                    width: 40,
+                                    align: 'right',
+                                    padding: [0, 10, 0, 0]
+                                },
+                                rateHead: {
+                                    color: '#333',
+                                    width: 40,
+                                    align: 'center',
+                                    padding: [0, 10, 0, 0]
+                                }
+                            }
+                        }
+                    },
+                    {value: 535, name: '1栋'},
+                    {value: 510, name: '2栋'},
+                    {value: 634, name: '3栋'},
+                    {value: 735, name: '4栋'}
+                ],
+                emphasis: {
+                    itemStyle: {
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+            }
+        ]
+    };
+    myChart.setOption(option);
+</script>
+
+
+</body>
+</html>
