@@ -33,21 +33,22 @@
                 <form action="/register" method="post">
                     <div class="ui segment" style="height: 500px">
                         <div class="ui input " style="width:300px;height: 50px " >
-                            <input   type="text"  name="username" placeholder="请输入用户名">
+                            <input   type="text"  name="username" th:value="${username}" placeholder="请输入用户名">
                         </div><br>
                         <div class="ui input" style="width:300px;height: 50px " >
-                            <input type="text" name="password" placeholder="请输入密码">
+                            <input type="text" name="password" th:value="${password}" placeholder="请输入密码">
                         </div><br>
                         <div class="ui input" style="width:300px;height: 50px " >
-                            <input type="text" name="name" placeholder="请输入真实姓名">
+                            <input type="text" name="name" th:value="${name}" placeholder="请输入真实姓名">
                         </div><br>
                         <div class="ui input" style="width:300px;height: 50px " >
-                            <input type="text" name="tel" placeholder="请输入电话号码">
+                            <input type="text" name="tel" th:value="${tel}" placeholder="请输入电话号码">
                         </div><br>
                         <div class="ui input" style="width:300px;height: 50px " >
-                            <input type="text" name="email" placeholder="请输入邮箱">
+                            <input type="text" name="email" th:value="${email}" placeholder="请输入邮箱">
                         </div>
                         <hr>
+                        <div class="ui  pointing red basic label" th:text="${error}" th:if="${error!=null}"></div>
                         <button  type="submit"  class="ui green basic button" style="width: 200px;height: 40px" >点击注册</button>
                     </div>
                 </form>

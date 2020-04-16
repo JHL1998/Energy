@@ -38,7 +38,7 @@
                         <div class="item">
                             <i class="user dropdown icon"></i>
                             <a href="#" class="content" th:if="${session.user!=null}" >
-                                <span th:text="${session.user.getName()}"></span>
+                                <span th:text="${name}"></span>
                             </a>
                         </div>
 
@@ -60,7 +60,7 @@
         <div class="ui  success large message" th:if="${session.user!=null}">
 
             <h2>Hi</h2>
-            <span th:text="${session.user.getName()}"> </span>
+            <span th:text="${name}"> </span>
             <p> 欢迎登录!</p>
 
 

@@ -4,6 +4,7 @@ import com.big407.energy.model.User;
 import com.big407.energy.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -33,7 +34,6 @@ public class LoginController {
      * 登录
      * @param username
      * @param password
-     * @param session
      * @param response
      * @param attributes
      * @return
@@ -41,12 +41,14 @@ public class LoginController {
     @PostMapping("/login")
     public String login(@RequestParam(name="username",required = false) String username,
                         @RequestParam(name="password",required = false)String password,
-                        HttpSession session,
                         HttpServletResponse response,
-                        RedirectAttributes attributes){
+                        RedirectAttributes attributes,
+                        Model model){
            User user=userService.login(username,password);
+
            if(user!=null){
                //登录成功
+               model.addAttribute("name",user.getName());
                String token= UUID.randomUUID().toString();
                //将自定义的token写入cookie
 
