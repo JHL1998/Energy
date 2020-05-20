@@ -1,0 +1,1 @@
+insert into admin (username, password) values ('admin1','123123'),('admin2','123123')

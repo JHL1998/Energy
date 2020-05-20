@@ -1,7 +1,8 @@
 package com.big407.energy.controller;
 
+import com.big407.energy.mapper.AdminMapper;
+import com.big407.energy.mapper.UserMapper;
 import com.big407.energy.model.User;
-import com.big407.energy.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,8 +19,11 @@ import java.util.UUID;
 @Controller
 public class LoginController {
 
-    @Autowired
-    UserService userService;
+   @Autowired
+   private UserMapper userMapper;
+
+   @Autowired
+   private AdminMapper adminMapper;
 
 
     @GetMapping("/")
@@ -44,7 +48,7 @@ public class LoginController {
                         HttpServletResponse response,
                         RedirectAttributes attributes,
                         Model model){
-           User user=userService.login(username,password);
+           User user=userMapper.login(username,password);
 
            if(user!=null){
                //登录成功
@@ -52,7 +56,7 @@ public class LoginController {
                String token= UUID.randomUUID().toString();
                //将自定义的token写入cookie
 
-               userService.addToken(user.getId(),token);
+               userMapper.addToken(user.getId(),token);
                response.addCookie(new Cookie("token",token));
 
 
@@ -67,6 +71,26 @@ public class LoginController {
 
 
     }
+
+
+//    @GetMapping("/login/{type}")
+//    public Object login(@RequestParam String username ,@RequestParam String password,@PathVariable String type){
+//        Object object=null;
+//
+//        switch (type) {
+//            case "user":
+//                //普通用户登陆
+//                object=userMapper.login(username,password);
+//
+//                break;
+//            case "admin":
+//                //管理员登陆
+//                object=adminMapper.login(username,password);
+//                break;
+//
+//        }
+//        return object;
+//    }
 
     /**
      * 登出
