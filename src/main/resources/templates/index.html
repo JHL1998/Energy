@@ -50,10 +50,17 @@
                       <div class="ui negative message" th:unless="${#strings.isEmpty(message)}" th:text="${message}"></div>
 
                   </form>
+                  <div class="ui message">
+                     <i class="ui icon universal access"></i> <a th:href="@{https://github.com/login/oauth/authorize(client_id='d48a784826373b93de7c',redirect_uri=${#httpServletRequest.getRequestURL()+'callback'},scope='user',state=1)}">
+                      点击第三方登陆
+                  </a>
+                  </div>
 
                   <div class="ui message">
                       没有账号？ <a href="/register">点击注册</a>
                   </div>
+
+
               </div>
           </div>
       </div>

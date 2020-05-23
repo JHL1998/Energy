@@ -5,6 +5,7 @@
     <title>区域概览</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
     <link rel="stylesheet" type="text/css" href="/css/me.css">
+    <link rel="stylesheet" th:href="@{/layui/css/layui.css}" media="all">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
     <script src="/js/echarts.min.js"></script>
@@ -21,7 +22,7 @@
             <h2 class=" ui  teal header item">智慧能源云平台</h2>
             <a href="/view" class="item"> <i class="world icon"></i>平台全景</a>
             <a href="/field" class="item"><i class="map icon"></i>区域概览</a>
-            <a href="#" class="item"><i class="home icon"></i>运维中心</a>
+            <a href="/operation" class="item"><i class="home icon"></i>运维中心</a>
             <a href="#" class="item"><i class="waring icon"></i>光伏监控</a>
             <a href="#" class="item"><i class="bar chart icon"></i>数据分析</a>
 
@@ -38,7 +39,7 @@
                         <div class="item">
                             <i class="user dropdown icon"></i>
                             <a href="#" class="content">
-                                <span th:text="{session.user.getName()}"></span>
+                              张三
                             </a>
                         </div>
 
@@ -55,144 +56,36 @@
 <div class="ui grid">
     <div class=" ten wide column">
 
-        <table class="ui  blue inverted celled table">
-            <thead>
-            <tr><th>序号</th>
-                <th>项目名称</th>
-                <th>额定容量</th>
-                <th>负荷</th>
-                <th>本月用电</th>
-                <th>接入时间</th>
-            </tr></thead>
-            <tbody>
-            <tr>
-                <td data-label="序号">1</td>
-                <td data-label="项目名称">24</td>
-                <td data-label="额定容量">Engineer</td>
-                <td data-label="负荷">4066,6</td>
-                <td data-label="本月用电">1952,240</td>
-                <td data-label="接入时间">2019-04-01</td>
-            </tr>
-            <tr>
-                <td data-label="序号">2</td>
-                <td data-label="项目名称">24</td>
-                <td data-label="额定容量">Engineer</td>
-                <td data-label="负荷">4066,6</td>
-                <td data-label="本月用电">1952,240</td>
-                <td data-label="接入时间">2019-04-01</td>
-            </tr>
-            <tr>
-                <td data-label="序号">3</td>
-                <td data-label="项目名称">24</td>
-                <td data-label="额定容量">Engineer</td>
-                <td data-label="负荷">4066,6</td>
-                <td data-label="本月用电">1952,240</td>
-                <td data-label="接入时间">2019-04-01</td>
-            </tr>
-            <tr>
-                <td data-label="序号">4</td>
-                <td data-label="项目名称">24</td>
-                <td data-label="额定容量">Engineer</td>
-                <td data-label="负荷">4066,6</td>
-                <td data-label="本月用电">1952,240</td>
-                <td data-label="接入时间">2019-04-01</td>
-            </tr>
-            <tr>
-                <td data-label="序号">5</td>
-                <td data-label="项目名称">24</td>
-                <td data-label="额定容量">Engineer</td>
-                <td data-label="负荷">4066,6</td>
-                <td data-label="本月用电">1952,240</td>
-                <td data-label="接入时间">2019-04-01</td>
-            </tr>
-            <tr>
-                <td data-label="序号">6</td>
-                <td data-label="项目名称">24</td>
-                <td data-label="额定容量">Engineer</td>
-                <td data-label="负荷">4066,6</td>
-                <td data-label="本月用电">1952,240</td>
-                <td data-label="接入时间">2019-04-01</td>
-            </tr>
-            <tr>
-                <td data-label="序号">7</td>
-                <td data-label="项目名称">24</td>
-                <td data-label="额定容量">Engineer</td>
-                <td data-label="负荷">4066,6</td>
-                <td data-label="本月用电">1952,240</td>
-                <td data-label="接入时间">2019-04-01</td>
-            </tr>
-            <tr>
-                <td data-label="序号">8</td>
-                <td data-label="项目名称">24</td>
-                <td data-label="额定容量">Engineer</td>
-                <td data-label="负荷">4066,6</td>
-                <td data-label="本月用电">1952,240</td>
-                <td data-label="接入时间">2019-04-01</td>
-            </tr>
-            <tr>
-                <td data-label="序号">9</td>
-                <td data-label="项目名称">24</td>
-                <td data-label="额定容量">Engineer</td>
-                <td data-label="负荷">4066,6</td>
-                <td data-label="本月用电">1952,240</td>
-                <td data-label="接入时间">2019-04-01</td>
-            </tr>
-            <tr>
-                <td data-label="序号">10</td>
-                <td data-label="项目名称">24</td>
-                <td data-label="额定容量">Engineer</td>
-                <td data-label="负荷">4066,6</td>
-                <td data-label="本月用电">1952,240</td>
-                <td data-label="接入时间">2019-04-01</td>
-            </tr>
-            <tr>
-                <td data-label="序号">11</td>
-                <td data-label="项目名称">24</td>
-                <td data-label="额定容量">Engineer</td>
-                <td data-label="负荷">4066,6</td>
-                <td data-label="本月用电">1952,240</td>
-                <td data-label="接入时间">2019-04-01</td>
-            </tr>
-            <tr>
-                <td data-label="序号">12</td>
-                <td data-label="项目名称">24</td>
-                <td data-label="额定容量">Engineer</td>
-                <td data-label="负荷">4066,6</td>
-                <td data-label="本月用电">1952,240</td>
-                <td data-label="接入时间">2019-04-01</td>
-            </tr>
-            <tr>
-                <td data-label="序号">12</td>
-                <td data-label="项目名称">24</td>
-                <td data-label="额定容量">Engineer</td>
-                <td data-label="负荷">4066,6</td>
-                <td data-label="本月用电">1952,240</td>
-                <td data-label="接入时间">2019-04-01</td>
-            </tr>
-            <tr>
-                <td data-label="序号">13</td>
-                <td data-label="项目名称">24</td>
-                <td data-label="额定容量">Engineer</td>
-                <td data-label="负荷">4066,6</td>
-                <td data-label="本月用电">1952,240</td>
-                <td data-label="接入时间">2019-04-01</td>
-            </tr>
-            <tr>
-                <td data-label="序号">14</td>
-                <td data-label="项目名称">24</td>
-                <td data-label="额定容量">Engineer</td>
-                <td data-label="负荷">4066,6</td>
-                <td data-label="本月用电">1952,240</td>
-                <td data-label="接入时间">2019-04-01</td>
-            </tr>
+        <table class="layui-hide" id="demo"></table>
 
 
+        <script th:src="@{/layui/layui.js}" charset="utf-8"></script>
+        <script>
+            layui.use('table', function(){
+                var table = layui.table;
 
+                table.render({
+                    elem: '#test'
+                    ,url:'/field/findAll'
+                    ,title: '菜单列表'
+                    ,cols: [
+                        [
+                            {field:'id', width:100, title: '编号', sort: true}
+                            ,{field:'name', width:200, title: '菜品'}
+                            ,{field:'price', width:100, title: '单价'}
+                            ,{field:'flavor', width:100, title: '口味'}
+                            ,{fixed: 'right', title:'操作', toolbar: '#barDemo', width:70}
+                        ]
+                    ]
+                    ,page: true
+                });
 
-            </tbody>
-        </table>
+            });
+        </script>
 
     </div>
+
+
 
     <div class="six wide column">
 

@@ -72,26 +72,6 @@ public class LoginController {
 
     }
 
-
-//    @GetMapping("/login/{type}")
-//    public Object login(@RequestParam String username ,@RequestParam String password,@PathVariable String type){
-//        Object object=null;
-//
-//        switch (type) {
-//            case "user":
-//                //普通用户登陆
-//                object=userMapper.login(username,password);
-//
-//                break;
-//            case "admin":
-//                //管理员登陆
-//                object=adminMapper.login(username,password);
-//                break;
-//
-//        }
-//        return object;
-//    }
-
     /**
      * 登出
      * @return

@@ -7,7 +7,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class FiledController {
 
     @GetMapping("/field")
-    public String field(){
+    public String redirect(){
+
         return "field";
     }
+
+
 }

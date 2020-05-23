@@ -2,7 +2,8 @@
 #数据源
 spring:
   thymeleaf:
-    mode: HTML
+    mode: html5
+    cache: false
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://47.92.115.93:3306/energy?useUnicode=true&characterEncoding=UTF-8&useSSL=false
@@ -10,6 +11,8 @@ spring:
     password: ADmin123?
   jpa:
     show-sql: true
+  resources:
+    static-locations: classpath:/static
 
 
 
@@ -31,3 +34,12 @@ mybatis:
 
 server:
   port: 8181
+github:
+  client:
+    id: d48a784826373b93de7c
+    secret: f122c2209158a26c7de05fe89628f40db50239ff
+  redirect:
+    uri: http://localhost:8181/callback
+
+
+
