@@ -1,5 +1,7 @@
 package com.big407.energy.intectptor;
 
+import com.big407.energy.mapper.GithubMapper;
+import com.big407.energy.model.GithubUser;
 import com.big407.energy.model.User;
 import com.big407.energy.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +17,9 @@ public class LoginInterceptor implements HandlerInterceptor {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private GithubMapper githubMapper;
+
     @Override
     public boolean preHandle(HttpServletRequest request,
                              HttpServletResponse response,
@@ -27,8 +32,12 @@ public class LoginInterceptor implements HandlerInterceptor {
                 if(cookie.getName().equals("token")){
                     String token=cookie.getValue();
                     User user=userService.findByToken(token);
+                    GithubUser githubUser=githubMapper.findGithubUserByToken(token);
                     if(user!=null){
                         //存到session里面
+                        request.getSession().setAttribute("user",user);
+                    }
+                    if(githubUser!=null){
                         request.getSession().setAttribute("user",user);
                     }
                     break;

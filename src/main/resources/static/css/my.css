@@ -1,0 +1,30 @@
+*{ padding:0; margin:0; list-style:none; border:0;}
+
+.all {
+    width: 100%;
+    height: 450px;
+    position: relative;
+    
+}
+.all .screen {
+    width: 100%; 
+    
+    position: relative;
+}
+.all .screen ul {
+    width: 6000px;
+    position: absolute;
+    left:0px; 
+    top:0px;
+    float: left;
+}
+.all .screen ul li {
+    width: 1450px;
+    float: left;
+    overflow: hidden;
+    list-style: none;
+}
+.all .screen ul li img {
+    width: 100%;
+    
+}

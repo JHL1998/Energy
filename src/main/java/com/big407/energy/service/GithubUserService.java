@@ -11,21 +11,21 @@ public class GithubUserService {
     @Autowired
     private GithubMapper mapper;
 
-    public void createOrUpdate(GithubUser githubUser){
+    public void createOrUpdate(GithubUser githubUser) {
         GithubUser user = mapper.findById(githubUser.getAccountId());
-         if(user==null){
-             user.setGmtCreate(System.currentTimeMillis());
-             user.setGmtModified(user.getGmtCreate());
-             mapper.create(githubUser);
-         }else{
-             GithubUser newUser= new GithubUser();
-            newUser.setGmtModified(System.currentTimeMillis());
-             newUser.setAvatarUrl(user.getAvatarUrl());
-             newUser.setToken(user.getToken());
-             newUser.setName(user.getName());
-             mapper.update(newUser,user.getAccountId());
+        if (user == null) {
+            githubUser.setGmtCreate(System.currentTimeMillis());
+            githubUser.setGmtModified(githubUser.getGmtCreate());
 
-         }
+            mapper.create(githubUser);
+        } else {
+            user.setGmtModified(System.currentTimeMillis());
+            user.setAvatarUrl(githubUser.getAvatarUrl());
+            user.setName(githubUser.getName());
+            user.setToken(githubUser.getToken());
+            mapper.update(user);
+
+        }
 
     }
 }
