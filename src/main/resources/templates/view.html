@@ -32,15 +32,16 @@
                 <div class="ui inverted">
                     <a href="#" class="item"> <i class="alarm icon  transparent"></i></a>
                 </div>
-                <div>
-                    <div class="ui inverted horizontal link list">
-                        <div class="item">
-                            <i class="user dropdown icon"></i>
-                            <a href="#" class="content">
-                                张三
-                            </a>
-                        </div>
-
+                <div class="ui dropdown item">
+                    <div class="text" th:if="${session.user!=null}">
+                        <img class="ui avatar image" src="https://unsplash.it/100/100?image-1005" th:text="${session.user.getName()}">
+                    </div>
+<!--                    <div class="text" th:if="${session.githubUser!=null}">-->
+<!--                        <span th:text="${session.githubUser.getName()}"> </span>-->
+<!--                    </div>-->
+                    <i class="dropdown icon"></i>
+                    <div class="menu">
+                        <a th:href="@{/logout}" class="item">注销</a>
                     </div>
                 </div>
 
@@ -116,7 +117,7 @@
                         <div class="ui content">总用户：</div>
                     </div>
                     <div class="right aligned column">
-                        <div class="ui content" style="color: coral">46<span style="color: black">户</span></div>
+                        <div class="ui content" style="color: coral"><span style="color: black" th:text="${stationNum}">户</span></div>
                     </div>
 
                 </div>
@@ -327,7 +328,11 @@
     };
     myChart.setOption(option);
 </script>
-
+<script>
+    $('.ui.dropdown').dropdown({
+        on: 'hover'
+    });
+</script>
 
 </body>
 </html>

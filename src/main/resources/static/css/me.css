@@ -170,3 +170,8 @@ body {
         width: 100% !important;
     }
 }
+
+.login_css{
+    width: 300px;
+    margin-left: 30px;
+}

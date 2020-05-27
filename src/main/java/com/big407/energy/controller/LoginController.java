@@ -1,6 +1,6 @@
 package com.big407.energy.controller;
 
-import com.big407.energy.mapper.AdminMapper;
+import com.big407.energy.mapper.GithubMapper;
 import com.big407.energy.mapper.UserMapper;
 import com.big407.energy.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +22,8 @@ public class LoginController {
    @Autowired
    private UserMapper userMapper;
 
-   @Autowired
-   private AdminMapper adminMapper;
+  @Autowired
+  private GithubMapper githubMapper;
 
 
     @GetMapping("/")

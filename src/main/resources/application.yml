@@ -2,7 +2,7 @@
 #数据源
 spring:
   thymeleaf:
-    mode: html5
+    mode: html
     cache: false
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver

@@ -25,4 +25,7 @@ public interface UserMapper {
     @Select("select * from user where token=#{token}")
     User findByToken(String token);
 
+    @Select("select count(*) from user")
+    int countUser();
+
 }

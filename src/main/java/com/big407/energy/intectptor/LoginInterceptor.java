@@ -38,7 +38,7 @@ public class LoginInterceptor implements HandlerInterceptor {
                         request.getSession().setAttribute("user",user);
                     }
                     if(githubUser!=null){
-                        request.getSession().setAttribute("user",user);
+                        request.getSession().setAttribute("githubUser",githubUser);
                     }
                     break;
                 }

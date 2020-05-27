@@ -25,51 +25,42 @@
 
 </nav>
 
-<!-- 注册-->
-<div class="m-padded-tb-large">
-    <div class="ui container">
 
-        <!-- 左边-->
-        <div class="ui grid">
-            <div class="eleven wide column">
-                <form action="/register" method="post">
-                    <div class="ui segment" style="height: 500px">
-                        <div class="ui input " style="width:300px;height: 50px " >
-                            <input   type="text"  name="username" th:value="${username}" placeholder="请输入用户名">
-                        </div><br>
-                        <div class="ui input" style="width:300px;height: 50px " >
-                            <input type="password" name="password" th:value="${password}" placeholder="请输入密码">
-                        </div><br>
-                        <div class="ui input" style="width:300px;height: 50px " >
-                            <input type="text" name="name" th:value="${name}" placeholder="请输入真实姓名">
-                        </div><br>
-                        <div class="ui input" style="width:300px;height: 50px " >
-                            <input type="text" name="tel" th:value="${tel}" placeholder="请输入电话号码">
-                        </div><br>
-                        <div class="ui input" style="width:300px;height: 50px " >
-                            <input type="text" name="email" th:value="${email}" placeholder="请输入邮箱">
-                        </div>
-                        <hr>
-                        <div class="ui  pointing red basic label" th:text="${error}" th:if="${error!=null}"></div>
-                        <button  type="submit"  class="ui green basic button" style="width: 200px;height: 40px" >点击注册</button>
-                    </div>
-                </form>
+<div class="ui two column grid">
+    <div class="ten  wide column  " style="margin-left: 100px">
+        <form class="ui form " method="post" action="/register">
+
+            <div class="required field login_css">
+                <label  >用户名</label>
+                <input   type="text" placeholder="请输入用户名" name="username"  th:value="${username}" >
             </div>
-
-        </div>
-        <!--右边-->
-        <div class=" five right wide colunm">
-
-        </div>
+            <div class="required field login_css">
+                <label  >密码</label>
+                <input   type="password" placeholder="请输入密码" name="password"  th:value="${password}">
+            </div>
+            <div class="required field login_css">
+                <label  >真实姓名</label>
+                <input   type="text" placeholder="请输入真实姓名" name="name"  th:value="${name}" >
+            </div>
+            <div class="required field login_css">
+                <label  >电话号码</label>
+                <input   type="number"  placeholder="请输入电话号码" name="tel"  th:value="${tel}"  >
+            </div>
+            <div class="required field login_css">
+                <label  >邮箱</label>
+                <input   type="text"  placeholder="请输入正确的邮箱" name="email"  th:value="${email}"  >
+            </div>
+            <hr>
+            <div class="ui  pointing red basic label" th:text="${error}" th:if="${error!=null}"></div>
+            <button  type="submit"  class="ui green basic button" style="width: 200px;height: 40px" >点击注册</button>
+        </form>
     </div>
 
-
-
-
+    <div class="six wide  column">
+        <img src="/images/timg.jpg" class="ui rounded image" style="width: 500px">
+    </div>
 
 </div>
-
-
 
 
 </body>
