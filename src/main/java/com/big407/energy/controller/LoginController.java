@@ -60,7 +60,7 @@ public class LoginController {
                response.addCookie(new Cookie("token",token));
 
 
-               return "/login";
+               return "login";
            }else{
                //退回到登录页面
                attributes.addFlashAttribute("message","用户名和密码错误");

@@ -57,7 +57,7 @@ public class AuthorizeController {
             //写入cookie
             response.addCookie(new Cookie("token", token));
 
-            return "/login";
+            return "login";
 
         } else {
             //登陆失败，重新登陆
